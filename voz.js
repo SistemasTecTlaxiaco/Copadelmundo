@@ -19,10 +19,10 @@ var arreglovoz = [
     "copa ¿que es el mundial de fútbol?",
     "copa Qué es el mundial de fútbol",
     "copa qué es el mundial de fútbol",
+    "copa Hazte más grande",
+    "copa hazte más grande",
     "copa muéstrate más pequeña",
     "copa Muéstrate más pequeña",
-    "copa Hazte más pequeña",
-    "copa hazte más pequeña",
     "copa desaparece",
     "copa Desaparece",
 ];
@@ -145,7 +145,8 @@ recognition.onresult = function (event) {
         speechSynthesis.speak(utterance);
     }
     //interaccion con RA
-    if (voz === "copa hazte mas grande" || voz === "copa Hazte mas grande") {
+    if (voz === "copa hazte más grande" || 
+        voz === "copa Hazte más grande") {
         console.log("Estas queriendo hacer la copa mas grande");
         if (contadorcubogrande == 0) {
             var el = document.querySelector("#avatar");
@@ -171,9 +172,7 @@ recognition.onresult = function (event) {
 
     if (
         voz === "copa muéstrate más pequeña" ||
-        voz === "copa Muéstrate más pequeña" ||
-        voz === "copa Hazte más pequeña" ||
-        voz === "copa hazte más pequeña"
+        voz === "copa Muéstrate más pequeña"
     ) {
         console.log("Estas queriendo hacerla mas pequeña");
         var el = document.querySelector("#avatar");
