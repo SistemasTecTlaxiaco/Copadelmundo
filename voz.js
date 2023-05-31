@@ -150,7 +150,7 @@ recognition.onresult = function (event) {
         console.log("Estas queriendo hacer la copa mas grande");
         if (contadorcubogrande == 0) {
             var el = document.querySelector("#avatar");
-            el.setAttribute("scale", "1 1 1");
+            el.setAttribute("scale", "0.5 0.5 0.5");
 
             let utterance = new SpeechSynthesisUtterance(
                 "Ahora la copa es más grande pero no tan grande como Messi"
