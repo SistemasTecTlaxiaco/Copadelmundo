@@ -7,18 +7,21 @@ var SpeechRecognitionEvent =
 
 var arreglovoz = [
     "Hola copa del mundo",
+    "Gracias copa del mundo",
     "gracias copa del mundo",
     "eso es todo por ahora",
+    "Eso es todo por ahora",
     "copa del mundo preséntate",
+    "Copa del mundo preséntate",
     "copa dime un dato interesante del futbol",
-    "copa dime un dato interesante del ftbol",
-    "copa Dime un dato interesante del ftbol",
-    "copa ¿que es el mundial de futbol?",
-    "copa que es el mundial de futbol",
-    "copa hazte mas grande",
-    "copa Hazte mas grande",
-    "copa muestrate más pequeña",
-    "copa Muestrate más pequeña",
+    "copa dime un dato interesante del fútbol",
+    "copa Dime un dato interesante del fútbol",
+    "copa ¿que es el mundial de fútbol?",
+    "copa Qué es el mundial de fútbol",
+    "copa qué es el mundial de fútbol",
+    "copa muéstrate más pequeña",
+    "copa Muéstrate más pequeña",
+    "copa Hazte más pequeña",
     "copa hazte más pequeña",
     "copa desaparece",
     "copa Desaparece",
@@ -78,7 +81,9 @@ recognition.onresult = function (event) {
         speechSynthesis.speak(utterance);
     }
 
-    if (voz === "gracias copa del mundo") {
+    if (voz === "gracias copa del mundo" ||
+        voz === "Gracias copa del mundo"
+    ) {
         console.log("Estas dando las gracias");
         let utterance = new SpeechSynthesisUtterance(
             "no es nada amigo, necesitas saber algo mas?"
@@ -87,7 +92,9 @@ recognition.onresult = function (event) {
         speechSynthesis.speak(utterance);
     }
 
-    if (voz === "eso es todo por ahora") {
+    if (voz === "eso es todo por ahora" ||
+        voz === "Eso es todo por ahora"
+    ) {
         console.log("Estas diciendo que ya no necesitas nada");
         let utterance = new SpeechSynthesisUtterance(
             "de nada amigo, siempre es un placer ayudarte!"
@@ -96,7 +103,9 @@ recognition.onresult = function (event) {
         speechSynthesis.speak(utterance);
     }
 
-    if (voz === "copa del mundo preséntate") {
+    if (voz === "copa del mundo preséntate" ||
+        voz === "Copa del mundo preséntate"
+    ) {
         console.log("La copa del mundo se esta presentando!");
         let utterance = new SpeechSynthesisUtterance(
             "Hola, yo soy la copa del mundo de futbol, y mi diseño representa a figuras humanas sosteniendo la tierra como simbolo de alegria y la grandeza del deportista en el momento del triunfo."
@@ -105,9 +114,9 @@ recognition.onresult = function (event) {
         speechSynthesis.speak(utterance);
     }
 
-    if (voz === "copa dime un dato interesante del ftbol" ||
-        voz === "copa Dime un dato interesante del ftbol" ||
-        voz === "copa dime un dato interesante del futbol"
+    if (voz === "copa dime un dato interesante del futbol" ||
+        voz === "copa Dime un dato interesante del fútbol" ||
+        voz === "copa dime un dato interesante del fútbol"
         
         ) {
         console.log("Hola, estas pregutando!");
@@ -126,10 +135,9 @@ recognition.onresult = function (event) {
     }
 
     if (
-        voz === "copa ¿que es el mundial de futbol?" ||
-        voz === "copa que es el mundial de futbol" ||
-        voz === "copa ¿que es el mundial de ftbol?" ||
-        voz === "copa que es el mundial de ftbol"
+        voz === "copa ¿que es el mundial de fútbol?" ||
+        voz === "copa Qué es el mundial de futbol" ||
+        voz === "copa qué es el mundial de fútbol"
     ) {
         console.log("Hola, estas preguntando!");
         let utterance = new SpeechSynthesisUtterance("es un gran evento deportivo en el que compiten las mejores selecciones nacionales del mundo de este deporte");
@@ -162,8 +170,9 @@ recognition.onresult = function (event) {
     }
 
     if (
-        voz === "copa muestrate más pequeña" ||
-        voz === "copa Muestrate más pequeña" ||
+        voz === "copa muéstrate más pequeña" ||
+        voz === "copa Muéstrate más pequeña" ||
+        voz === "copa Hazte más pequeña" ||
         voz === "copa hazte más pequeña"
     ) {
         console.log("Estas queriendo hacerla mas pequeña");
@@ -178,7 +187,7 @@ recognition.onresult = function (event) {
     }
     if (
         voz === "copa desaparece" ||
-        voz === "octocat Desaparece"
+        voz === "copa Desaparece"
     ) {
         console.log("Estas queriendo que la copa desaparezca");
 
