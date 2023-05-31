@@ -20,11 +20,8 @@ var arreglovoz = [
     "copa muestrate más pequeña",
     "copa Muestrate más pequeña",
     "copa hazte más pequeña",
-    "octocat Haz que Iron Cat desaparezca",
-    "octocat Haz que ironcat desaparezca",
-    "octocat regresa al escenario",
-    "octocat regresa a la escena",
-    "octocat vuelve",
+    "copa desaparece",
+    "copa Desaparece",
 ];
 
 var grammar =
@@ -180,37 +177,13 @@ recognition.onresult = function (event) {
         speechSynthesis.speak(utterance);
     }
     if (
-        voz === "octocat Haz que ironcat desaparezca" ||
-        voz === "octocat Haz que Iron Cat desaparezca"
+        voz === "copa desaparece" ||
+        voz === "octocat Desaparece"
     ) {
-        console.log("Estas queriendo a ironcat transparente");
-        var el = document.querySelector("#avatar");
-        el.setAttribute("visible", "false");
+        console.log("Estas queriendo que la copa desaparezca");
 
         let utterance = new SpeechSynthesisUtterance(
-            "Ironcat a desaparecido, a utilizado nanotecnologia y muchas librerias que ha econtrado en GitHub."
-        );
-        utterance.lang = "es-MX";
-        speechSynthesis.speak(utterance);
-    }
-
-    if (
-        voz === "octocat regresa al escenario" ||
-        voz === "octocat regresa a la escena"
-    ) {
-        console.log("Estas queriendo regresar a octocat");
-        var el = document.querySelector("#avatar");
-        el.setAttribute(
-            "src",
-            "https://cdn.glitch.global/16b440ad-e892-4085-9aee-0cf4887d328f/octocatgit.glb?v=1648149096491"
-        );
-        el.setAttribute("scale", "0.1 0.1 0.1");
-        el.setAttribute("position", "0 -0.25 0");
-        el.setAttribute("rotation", "0 0 0");
-        el.setAttribute("visible", "true");
-
-        let utterance = new SpeechSynthesisUtterance(
-            "Enseguida amigo. aunque ya me estoy cansando de esto."
+            "No puedo desaparecer porque me da miedo la oscuridad."
         );
         utterance.lang = "es-MX";
         speechSynthesis.speak(utterance);
