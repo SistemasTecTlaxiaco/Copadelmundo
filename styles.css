@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+}
+
+.example-container {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#example-scanning-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 2;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    #example-scanning-overlay .inner {
+        width: 50vh;
+        height: 50vh;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    #example-scanning-overlay .inner {
+        width: 80vw;
+        height: 80vw;
+    }
+}
+
+#example-scanning-overlay .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(to right, white 10px, transparent 10px) 0 0,
+        linear-gradient(to right, white 10px, transparent 10px) 0 100%,
+        linear-gradient(to left, white 10px, transparent 10px) 100% 0,
+        linear-gradient(to left, white 10px, transparent 10px) 100% 100%,
+        linear-gradient(to bottom, white 10px, transparent 10px) 0 0,
+        linear-gradient(to bottom, white 10px, transparent 10px) 100% 0,
+        linear-gradient(to top, white 10px, transparent 10px) 0 100%,
+        linear-gradient(to top, white 10px, transparent 10px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+#example-scanning-overlay.hidden {
+    display: none;
+}
+
+#example-scanning-overlay img {
+    opacity: 0.6;
+    width: 90%;
+    align-self: center;
+}
+
+#example-scanning-overlay .inner .scanline {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: white;
+    animation: move 2s linear infinite;
+}
+
+@keyframes move {
+
+    0%,
+    100% {
+        top: 0%;
+    }
+
+    50% {
+        top: calc(100% - 10px);
+    }
+}
+
+#text {
+    font-family: Verdana;
+    font-family: Vegur, "PT Sans", Verdana, sans-serif;
+}
+
+.contenedor {
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-image: radial-gradient(circle at 52.12% 74.26%,
+            #a225c9 0,
+            #8120b8 25%,
+            #5f19a4 50%,
+            #3c1290 75%,
+            #110d7c 100%);
+    position: fixed;
+    z-index: 9999;
+    transition: all 1.5s;
+}
+
+.carga,
+.carga:before,
+.carga:after {
+    width: 100%;
+    height: 100%;
+}
+
+.rotate-45 {
+    transform-origin: center;
+    transform: rotate(45deg);
+}
+
+.rotate {
+    transform-origin: center;
+    animation: rotate 1s ease-in-out infinite;
+}
+
+.rotate-back {
+    transform-origin: center;
+    animation: rotate 1s ease-in-out infinite;
+    animation-direction: reverse;
+}
+
+.left1 {
+    animation: moved 1s ease-in-out infinite;
+}
+
+.right1 {
+    animation: moved 1s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(calc(90deg + 45deg));
+    }
+}
+
+@keyframes moved {
+    50% {
+        transform: translate(-30px, -30px);
+    }
+}
+
+.cargando,
+.percentage {
+    height: 10px;
+    max-width: 100px;
+    border: 2px solid rgba(255, 255, 255, 0.596);
+    background-color: rgba(0, 0, 0, 0.089);
+    border-radius: 20px;
+    font-weight: 300;
+    position: absolute;
+    top: 180px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cargando:after,
+.percentage:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 180px;
+    left: 0;
+}
+
+.trackbar {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.99;
+}
+
+.loadbar {
+    width: 0%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg,
+            #a225c9,
+            #a225c9 10px,
+            white 10px,
+            white 20px);
+    box-shadow: 0px 0px 14px 1px #e766b6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: flicker 5s infinite;
+    overflow: hidden;
+}
