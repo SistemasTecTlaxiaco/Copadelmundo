@@ -6,7 +6,7 @@
 
 - Desarrollar un prototipo de aplicación interactiva basada en realidad aumentada para visualizar un apartamento y realizar modificaciones visuales de colores, texturas y distribuciones predeterminadas.
 
-###Objetivo Especifico
+### Objetivo Especifico
 
 1.  Caracterizar el prototipo a desarrollar.
 2.     Analizar, depurar y levantar tridimensionalmente la información recopilada.
@@ -24,7 +24,7 @@
 3.     Marcador de imagen (Octocad)
 4.     Dispositivo con camara
 
-###Equipo de desarrollo
+### Equipo de desarrollo
 
                     
 Nombre  | Rol
@@ -34,5 +34,5 @@ Francisco Ballesteros  | Programador
 Rigoberto Ramirez  | Diseñador
 Luis Carlos Rendon  | Analista
 
-###Link del proyecto
+### Link del proyecto
 https://github.com/SistemasTecTlaxiaco/Copadelmundo
